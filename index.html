@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Pointless Clicker Game</title>
-</head>
+    <head>
+        <title>Clicker Game</title>
+		
+		
+		<style>
+		
+		body {
+		text-align: center;
+		
+		}
+		
+		</style>
+		
+		
+		
+    </head>
+    <body>
+        <div>
+        <button onclick=oncl()>Click me</button>
+        </div>
+        <div>
+        <p id="p" >0 Points</p>
+        <button onclick=upgrade() id="u" >Upgrade for 100</button>
+        </div>
+		
+		<script>
+		alert("i know its bad shut up");
 
-<body>
-Not even started yet shut up
-</body>
-
+var x=0;
+var lv=1;
+function oncl(){
+   x+=lv;
+   textUpdate();
+    
+}
+function textUpdate(){
+    document.getElementById("p").innerHTML=x+" points";
+    
+};
+function upgrade(){
+   switch (lv) {
+      case 1:
+      if (x>=100){
+         lv++;
+         x-=100;   document.getElementById("u").innerHTML= "Upgrade for 200";
+      }
+      break;
+      case 2:
+      if (x>=200){
+         lv=4;
+         x-=200;   document.getElementById("u").innerHTML= "Upgrade for 500";
+       
+   }
+   break;
+   case 4:
+   
+if (x>=100){
+         lv=8;
+         x-=500;   document.getElementById("u").innerHTML= "Fully Upgraded";
+}
+break;
+}
+}
+		</script>
+		
+		
+		
+		
+		
+    </body>
 </html>
